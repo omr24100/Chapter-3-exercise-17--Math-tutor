@@ -9,36 +9,40 @@ Requirments: Write a program that can be used as a math tutor for a young studen
  The program should then pause while the student works on the problem. When the student is ready to check the answer, he or she can press a key and the program will display the correct solution.                                                   
 */
 #include <iostream>
-#include <cstdlib>  
-#include <ctime>    
-#include <conio.h>  
+#include <cstdlib> 
+#include <ctime> 
+
 using namespace std;
 
 int main() {
-    
+   
     srand(static_cast<unsigned int>(time(0)));
 
-    
-    int num1 = rand() % 900 + 1;
-    int num2 = rand() % 900 + 1;
+  
+    int num1 = rand() % 900 + 1; 
+    int num2 = rand() % 900 + 1; 
 
-   
+ 
     cout << "What is " << num1 << " + " << num2 << "?" << endl;
 
- 
-    cout << "Press any key when you're ready to check your answer..." << endl;
-    while (!_kbhit()) {
-        
-    }
+    
+    int studentAnswer;
+    cout << "Enter your answer: ";
+    cin >> studentAnswer;
 
-
-    _getch();  
-
-
+    
     int correctAnswer = num1 + num2;
 
- 
+   
     cout << num1 << " + " << num2 << " = " << correctAnswer << endl;
+
+   
+    if (studentAnswer == correctAnswer) {
+        cout << "You are correct!" << endl;
+    }
+    else {
+        cout << "Your answer is not correct." << endl;
+    }
 
     return 0;
 }
