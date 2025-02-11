@@ -1,8 +1,8 @@
 // Chapter 3 exercise 17- Math tutor.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 /*
-File Name: Chapter 3 exercise 17- Math tutor
-GitHub:
+File Name: Chapter 3 exercise 17- Math tutor part 2 
+GitHub:https://github.com/omr24100/Chapter-3-exercise-17--Math-tutor.git
 Programmer: Olivia Ruiz
 Date: 2/11/25
 Requirments: Write a program that can be used as a math tutor for a young student. The program should display two random numbers to be added, such as:
