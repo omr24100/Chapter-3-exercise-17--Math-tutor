@@ -1,0 +1,18 @@
+#include "math_operations.h"
+#include <cstdlib>
+#include <ctime>
+
+// Initialize random number generator
+void initializeRandom() {
+    srand(time(0));  // Initialize the random seed based on time
+}
+
+// Function to generate a random number between 1 and 20
+int generateRandomNumber() {
+    return rand() % 20 + 1;
+}
+
+// Function to perform addition and return the result
+int addNumbers(int num1, int num2) {
+    return num1 + num2;
+}
