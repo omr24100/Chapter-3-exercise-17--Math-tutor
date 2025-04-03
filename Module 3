@@ -1,0 +1,21 @@
+#include "user_input.h"
+#include <iostream>
+
+using namespace std;
+
+
+int getUserAnswer() {
+    int answer;
+    cout << "Your answer: ";
+    cin >> answer;  
+    return answer;
+}
+
+
+void printFeedback(int userAnswer, int correctAnswer) {
+    if (userAnswer == correctAnswer) {
+        cout << "Congratulations! You got it right!" << endl;
+    } else {
+        cout << "Oops! The correct answer is " << correctAnswer << "." << endl;
+    }
+}
