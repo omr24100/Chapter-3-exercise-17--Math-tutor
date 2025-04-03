@@ -2,47 +2,69 @@
 //
 /*
 File Name: Chapter 3 exercise 17- Math tutor part 2 
-GitHub:https://github.com/omr24100/Chapter-3-exercise-17--Math-tutor.git
+/*
+File Name: Math tutor part 2
 Programmer: Olivia Ruiz
-Date: 2/11/25
-Requirments: Write a program that can be used as a math tutor for a young student. The program should display two random numbers to be added, such as:
- The program should then pause while the student works on the problem. When the student is ready to check the answer, he or she can press a key and the program will display the correct solution.                                                   
+Date: 4/3/25
+Requirements: Write a program that can be used as a math tutor for a young student. The program should display two random numbers to be added, such as:
+ The program should then pause while the student enters there answer and if the answer is correct
+ than a congratuations should be presented, if incorrect then the program should display the correct answer.
 */
+
 #include <iostream>
-#include <cstdlib> 
-#include <ctime> 
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
+
+int generateRandomNumber() {
+    return rand() % 20 + 1;
+}
+
+
+int addNumbers(int num1, int num2) {
+    return num1 + num2;
+}
+
+
+int getUserAnswer() {
+    int answer;
+    cout << "Your answer: ";
+    cin >> answer;  
+    return answer;
+}
+
+
+void printFeedback(int userAnswer, int correctAnswer) {
+    if (userAnswer == correctAnswer) {
+        cout << "Congratulations! You got it right!" << endl;
+    }
+    else {
+        cout << "Oops! The correct answer is " << correctAnswer << "." << endl;
+    }
+}
+
+
 int main() {
+    
+    srand(time(0));
+
    
-    srand(static_cast<unsigned int>(time(0)));
+    int num1 = generateRandomNumber();
+    int num2 = generateRandomNumber();
 
-  
-    int num1 = rand() % 900 + 1; 
-    int num2 = rand() % 900 + 1; 
-
- 
+   
     cout << "What is " << num1 << " + " << num2 << "?" << endl;
 
     
-    int studentAnswer;
-    cout << "Enter your answer: ";
-    cin >> studentAnswer;
+    int userAnswer = getUserAnswer();
 
     
-    int correctAnswer = num1 + num2;
+    int correctAnswer = addNumbers(num1, num2);
 
-   
-    cout << num1 << " + " << num2 << " = " << correctAnswer << endl;
-
-   
-    if (studentAnswer == correctAnswer) {
-        cout << "You are correct!" << endl;
-    }
-    else {
-        cout << "Your answer is not correct." << endl;
-    }
+    
+    printFeedback(userAnswer, correctAnswer);
 
     return 0;
 }
